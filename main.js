@@ -19,6 +19,14 @@ function newTodo(value) {
   const completedBtn = newBtn('Completed');
   const deleteBtn = newBtn('Delete');
 
+  completedBtn.addEventListener('click', () => {
+    todoInput.style.background = 'green';
+  });
+
+  deleteBtn.addEventListener('click', () => {
+    todoContainer.remove();
+  });
+
   todoContainer.appendChild(todoInput);
   todoContainer.appendChild(completedBtn);
   todoContainer.appendChild(deleteBtn);
@@ -28,7 +36,6 @@ function newTodo(value) {
 
 function newTodos(event) {
   event.preventDefault();
-  console.log(event.target);
   const inputValue = document.querySelector('.input-todo').value;
 
   const todo = newTodo(inputValue);
@@ -46,3 +53,5 @@ function newTodos(event) {
 
   event.target.reset();
 }
+
+function complete() {}
